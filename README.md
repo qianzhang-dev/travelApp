@@ -1,4 +1,5 @@
 # travelApp
+Hi! We build every single app on our own!
 
 ## Environment Setup
 ### Font-end Debug:
