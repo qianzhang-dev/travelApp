@@ -1,0 +1,6 @@
+__pycache__
+Server/.venv*
+Server/.env*
+Server/venv*
+Server/env*
+UI/node_modules/
