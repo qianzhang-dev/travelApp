@@ -3,4 +3,5 @@ Server/.venv*
 Server/.env*
 Server/venv*
 Server/env*
+Server/app/app.db
 UI/node_modules/

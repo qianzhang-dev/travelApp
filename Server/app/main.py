@@ -1,7 +1,18 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from flask_restful import Api, Resource
 
-app = Flask(__name__)
+from .config import ConfigProvider 
 
-@app.route('/')
-def index():
-    return "200"
+app: Flask = Flask(__name__)
+ConfigProvider.apply_to_app(app)
+
+db: SQLAlchemy = SQLAlchemy(app)
+migrate: Migrate = Migrate(app, db)
+api: Api = Api(app)
+
+from . import models
+from . import apis
+
+api.add_resource(apis.Index, '/')
