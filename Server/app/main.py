@@ -1,3 +1,6 @@
+from typing import List
+import inspect
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -12,7 +15,9 @@ db: SQLAlchemy = SQLAlchemy(app)
 migrate: Migrate = Migrate(app, db)
 api: Api = Api(app)
 
+# Register DB Models in Flask-Migrate
 from . import models
-from . import apis
 
+# Register APIs in Flask-Restful
+from . import apis
 api.add_resource(apis.Index, '/')
